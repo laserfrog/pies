@@ -1,0 +1,7 @@
+git remote add pies https://github.com/laserfrog/pies.git
+
+git add .
+git status
+git commit -m "added a comment" 
+
+git push pies main
