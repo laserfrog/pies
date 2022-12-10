@@ -1,10 +1,12 @@
 import keyboard
 import os
 
+matrix_size = 5
+
 
 def main():
 
-    matrix_size = 5
+    #matrix_size = 5
     a = ['#'] * matrix_size
 
     for i in range(matrix_size):
@@ -32,15 +34,10 @@ def go_up(player_location, matrix):
 
 
 def go_down(player_location: dict, matrix: list):
-    try:
+    if player_location['y'] < matrix_size:
         player_location['y'] += 1
         matrix[player_location['y']][player_location['x']] = '@'
-    except IndexError:
-        pass
-    try:
         matrix[player_location['y'] - 1][player_location['x']] = '#'
-    except IndexError:
-        pass
     print_level(matrix)
 
 
